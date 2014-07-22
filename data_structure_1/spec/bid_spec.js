@@ -10,8 +10,11 @@ describe("Bid", function() {
             sign_ups: [],
             bids: []
         };
+
         activities.push(activity);
+
         localStorage.activities = JSON.stringify(activities);
+//        console.log(localStorage.activities)
         localStorage.current_activity = "first activity";
         localStorage.is_bidding = "";
     });
