@@ -66,7 +66,7 @@ describe("Bids and Bidding Render", function() {
                 }
             ]
         }];
-        activities = two_activities;
+       activities = two_activities;
         localStorage.activities = JSON.stringify(activities);
         localStorage.current_activity = "second activity";
         localStorage.is_bidding = "";
@@ -75,10 +75,9 @@ describe("Bids and Bidding Render", function() {
     afterEach(function(){
         localStorage.clear();
     })
-
     it("should show all bids", function(){
+        console.log(localStorage.activities)
         var bids = transform_bids_to_view_model("second activity");
-console.log(localStorage.activities)
         expect(bids.length).toBe(2);
         expect(bids[0].name).toBe("竞价1");
         expect(bids[1].name).toBe("竞价2");
@@ -87,10 +86,10 @@ console.log(localStorage.activities)
     it("should show minimum not repeatable bidding", function(){
         var biddings = transform_biddings_to_view_model("second activity","竞价2");
 
-        expect(biddings.length).toBe(1);
-        expect(biddings[0].name).toBe("于硕");
-        expect(biddings[0].phone).toBe("15600000000");
-        expect(biddings[0].price).toBe("12");
+        expect(biddings.length).toBe(3);
+        expect(biddings[1].name).toBe("于硕");
+        expect(biddings[1].phone).toBe("15600000000");
+        expect(biddings[1].price).toBe("12");
     });
 
 
