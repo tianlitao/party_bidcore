@@ -11,7 +11,6 @@ describe("Activity", function() {
 
     it("should first activity was created on creating", function(){
         var activity_name = "first activity";
-
         var activity = new Activity(activity_name);
         activity.create();
         activity.active(activity_name);

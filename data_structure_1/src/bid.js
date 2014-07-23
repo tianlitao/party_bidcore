@@ -10,6 +10,8 @@ create_new_bid = function () {
     var bid = new Bid()
     act.bids.unshift(bid)
     localStorage.setItem("activities", JSON.stringify(activities))
+
+
 }
 transform_bids_to_view_model = function () {
     var activities = JSON.parse(localStorage.getItem("activities"))

@@ -5,6 +5,7 @@ function Activity(activity_name){
 }
 Activity.prototype.create=function(){
     var activity_json = JSON.parse(localStorage.activities);
+    console.log(activity_json)
     activity_json.unshift(this)
     localStorage.setItem("activities", JSON.stringify(activity_json))
 }
