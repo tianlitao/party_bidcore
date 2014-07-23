@@ -1,13 +1,18 @@
 create_new_bid=function(){
     var activities = JSON.parse(localStorage.getItem("activities"))
-    console.log(activities[0].bids)
-    var act = _.find(activities, function (act) {
-        return act.id == "0"
-    })
-    var bid=[]
-    console.log(activities["0"].id)
-    var a=_.findWhere(activities, {id: "1"})
-    console.log(a)
-    console.log(activities)
 
+    var bid="竞价"+(activities[localStorage.current_activity_id].bids.length+1)
+    var bids=[]
+    bids.push(bid)
+    activities[localStorage.current_activity_id].bids=bids
+    activities[localStorage.current_activity_id].biddings[bid]=[]
+    localStorage.setItem("activities", JSON.stringify(activities))
+}
+transform_bids_to_view_model=function(){
+    var activities = JSON.parse(localStorage.getItem("activities"))
+    return activities[localStorage.current_activity].bids
+}
+transform_biddings_to_view_model=function(){
+    var activities = JSON.parse(localStorage.getItem("activities"))
+    return activities[localStorage.current_activity].biddings["竞价2"]
 }

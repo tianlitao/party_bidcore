@@ -23,10 +23,10 @@ describe("Bid", function() {
 
     it("should create new bid", function(){
         create_new_bid("0");
-
         var activities = JSON.parse(localStorage.activities);
         expect(activities["0"].bids.length).toBe(1);
         expect(JSON.stringify(activities["0"].biddings["竞价1"])).toBe("[]");
+        console.log(activities["0"].biddings["竞价1"])
     });
 
 

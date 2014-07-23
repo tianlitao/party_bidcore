@@ -44,9 +44,11 @@ describe("Bidding", function() {
         var phone_no = "13600000000";
         var sms_json = build_sms_json("JJ12", phone_no);
         localStorage.is_bidding = "true";
+
         notify_sms_received(sms_json);
 
         var activities = JSON.parse(localStorage.activities);
+        console.log(activities)
         expect(activities["1"].biddings["竞价1"].length).toBe(1);
 
         expect(activities["1"].biddings["竞价1"][0].phone).toBe(phone_no);
