@@ -4,7 +4,6 @@ describe("Activity", function() {
     beforeEach(function() {
         init_activity_database()
     });
-
     afterEach(function(){
         localStorage.clear();
     })
@@ -16,6 +15,7 @@ describe("Activity", function() {
         activity.create();
 
         var activities_json = JSON.parse(localStorage.activities);
+        console.log(activities_json.id)
         expect(activities_json[0].id).toBe("0");
         expect(activities_json[0].name).toBe(activity_name);
         expect(localStorage.current_activity).toBe("0");

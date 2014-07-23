@@ -16,12 +16,12 @@ function notify_sms_received(sms_json) {
 
 }
 save_bid_message = function (sms_json) {
-    var activities = JSON.parse(localStorage.getItem("activities"))
-    var message = sms_json.messages[0].message.replace(/\s/g, "");
+
     var price = message.substr(2).trim()
     var apply_phone = sms_json.messages[0].phone
     var bid_message = {'phone': apply_phone, 'price': price}
-
+    activities[localStorage.current_activity_id].biddings[ localStorage.current_bid].unshift(bid_message)
+    localStorage.setItem("activities", JSON.stringify(activities))
 
 
 }
