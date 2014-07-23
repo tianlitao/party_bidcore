@@ -78,7 +78,7 @@ describe("Bids and Bidding Render", function() {
 
     it("should show all bids", function(){
         var bids = transform_bids_to_view_model("second activity");
-
+console.log(localStorage.activities)
         expect(bids.length).toBe(2);
         expect(bids[0].name).toBe("竞价1");
         expect(bids[1].name).toBe("竞价2");

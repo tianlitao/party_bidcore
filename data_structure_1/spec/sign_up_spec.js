@@ -39,7 +39,7 @@ describe("SignUp", function() {
         //is false
         localStorage.is_signing_up = "false";
         notify_sms_received(sms_json);
-
+console.log( localStorage.is_signing_up)
         var activities = JSON.parse(localStorage.activities);
         expect(activities[1].sign_ups.length).toBe(0);
         //is empty string
