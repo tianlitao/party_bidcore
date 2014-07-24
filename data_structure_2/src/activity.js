@@ -8,7 +8,7 @@ Activity.prototype.create=function(){
     var activities = JSON.parse(localStorage.getItem("activities"))
     var activity_ids=JSON.parse(localStorage.getItem("activity_ids"))
     var activity_id=JSON.stringify(activity_ids.length)
-activity_ids.push(activity_id)
+console.log(Object.keys(activity_ids).length)
 activities[activity_id]=this
     localStorage.setItem("activity_ids", JSON.stringify(activity_ids))
     localStorage.setItem("activities", JSON.stringify(activities))

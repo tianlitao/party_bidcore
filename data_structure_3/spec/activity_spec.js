@@ -10,12 +10,9 @@ describe("Activity", function() {
 
     it("should first activity was created on creating", function(){
         var activity_name = "first activity";
-
         var activity = new Activity(activity_name);
         activity.create();
-
         var activities_json = JSON.parse(localStorage.activities);
-        console.log(activities_json.id)
         expect(activities_json[0].id).toBe("0");
         expect(activities_json[0].name).toBe(activity_name);
         expect(localStorage.current_activity).toBe("0");
@@ -32,6 +29,7 @@ describe("Activity", function() {
         expect(localStorage.activity_id_generator).toBe("3");
 
         var activities_json = JSON.parse(localStorage.activities);
+        console.log(activities_json[1].id)
         expect(activities_json[1].id).toBe("1");
         expect(activities_json[1].name).toBe("second activity");
     });
