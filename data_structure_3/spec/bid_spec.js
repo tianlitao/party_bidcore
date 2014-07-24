@@ -15,9 +15,11 @@ describe("Bid", function() {
     })
 
     it("should create new bid", function(){
+
         create_new_bid("1");
 
-        var bids = JSON.parse(localStorage.bids);
+        var bids = JSON.parse(localStorage.getItem("bids"));
+        console.log(bids)
         expect(bids.length).toBe(1);
         expect(JSON.stringify(bids[0].biddings)).toBe("[]");
     });

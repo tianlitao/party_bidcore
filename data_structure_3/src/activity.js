@@ -7,7 +7,6 @@ Activity.prototype.create=function(){
     var activities = JSON.parse(localStorage.getItem("activities"))
 this.id=activities.length+""
      activities.push(this)
-    console.log(activities)
     localStorage.setItem("activities", JSON.stringify(activities))
     localStorage.current_activity=0
     localStorage.activity_id_generator=activities.length
