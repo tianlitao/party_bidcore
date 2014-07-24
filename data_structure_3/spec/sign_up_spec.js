@@ -32,6 +32,7 @@ describe("SignUp", function() {
         notify_sms_received(sms_json);
 
         var sign_ups = JSON.parse(localStorage.sign_ups);
+        console.log(sign_ups)
         expect(sign_ups.length).toBe(1);
         expect(sign_ups[0].name).toBe("仝键");
         expect(sign_ups[0].activity_id).toBe("1");
